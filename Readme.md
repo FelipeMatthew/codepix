@@ -75,3 +75,109 @@
   - Docker 
   - GoLang 
   - Apache Kafka
+
+
+  ### Desenvolvimento 
+
+  zookiper - 
+
+  #### Codigos no docker 
+
+  - para iniciar a aplicação - docker-compose up -d
+  - para verificar quais aplicações estão sendo rodadas - docker-compose ps
+  - para acessar uma imagem você utiliza - docker exec -it [`nome da imagem`] bash
+
+
+### Go mod
+
+vai conmseguir baixar e configurar para toda aplicação
+
+### Domain
+
+- coração da aplicação - onde tem entidade e regras de negocio 
+- go não é orientado a objeto, é orienteado a estrutura 
+
+Serialização: converter automaticamente a classe para o tipo que você deseja - ex: JSON
+
+Processos de validação e tudo mais tem que ser realizado no coração da aplicação, e não depois
+
+### Realations 
+
+BANK -> Accounts[] -> PixKeys[]
+
+Pix conta e o banco 
+
+### Contrato
+
+Agregado principal - pixkeys
+
+Vai ser definido um padrão - repostirio de interface, para quando for criado um banco de dados ele seja criado nesse padrão.
+
+
+
+# Aula 02 - GRPC
+
+GRPC X API
+
+- framework da google que facilita comunicação entre sistemas. 
+- ideal para quando for trabalhar em micro serviços (API REST)
+- Gera codigo de forma automática com base na sua regra de negócio
+- STREAMING BIDIRECIONAL UTILIZANDO HTTP 2 {
+  consegue passar informações de modo binário, e algo mais consistente, dados de forma continua
+}
+
+Linguagens que tem suporte: 
+  - GO
+  - JAVA
+  - C
+    - C++
+    - Python 
+    - Ruby
+    - Node
+    - Dart
+    - Kotlin
+    - C#
+    - PHP
+
+
+### RPC 
+
+Remote  procedure call - função que o servidor oferece para o usuário, e o usuário passa o parametro 
+
+Clitent - sever.soma(A+B) = sever - func soma(a,b){return a+b}
+
+#### Protocol Buffers - 
+
+ É uma plataforma ao qual vc cria uma estrutura de dados, e faz serialização usando XML
+
+ Protocol buffer x JSON
+  - Protocol trabalha com arquivos binários, o json é plaintex 
+  - é mais rapido e leve, alto desempenho
+  - gasta menos recurso de redes
+
+  ![Process Dynamic](https://cdn.discordapp.com/attachments/901313407083495446/1169430023858569237/image.png?ex=65555f94&is=6542ea94&hm=79a6df939d18b09490327d081c07b3a81789cff8caff1ed4ed95179cc84ad17c&)
+
+
+ ### HTTP 2
+
+- Alto ganho de performance 
+- Utiliza a mesma conexão TCP tanto para requisição quanto para resposta. 
+- Headers comprimidos para comunicação. 
+- migrar tudo para http 2
+
+
+### GRPC API
+
+Retornar alguns formatos de comunicação 
+
+"UNARY"
+- formato unário 
+![Process Dynamic](https://media.discordapp.net/attachments/901313407083495446/1169433739173048340/image.png?ex=6555630a&is=6542ee0a&hm=502ddbaf1db78d7064e1d4383c2a09528f7f3fd8c55552c486130cd68ae297d0&=)
+
+// Vai continuar retornando response para o cliente, não vai ser uma requisição unica, ela vai ter retorno continuo chamado de STREAMING DE DADOS
+"SERVER STREAMING"
+![Process Dynamic](https://cdn.discordapp.com/attachments/901313407083495446/1169434115204984952/image.png?ex=65556364&is=6542ee64&hm=7e68f1912eb36ff6541fce371df0033e83955d83a157941dae14ac0c41f58d7e&)
+
+"CLIENT STREAMING"
+![Process Dynamic](https://media.discordapp.net/attachments/901313407083495446/1169434512720134154/image.png?ex=655563c2&is=6542eec2&hm=962973d4d35133cb261b8823110396fbb2e4f1ccdf1128391909fed1741351b1&=)
+
