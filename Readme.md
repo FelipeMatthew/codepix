@@ -181,3 +181,15 @@ Retornar alguns formatos de comunicação
 "CLIENT STREAMING"
 ![Process Dynamic](https://media.discordapp.net/attachments/901313407083495446/1169434512720134154/image.png?ex=655563c2&is=6542eec2&hm=962973d4d35133cb261b8823110396fbb2e4f1ccdf1128391909fed1741351b1&=)
 
+
+Model se autovalida e por isso na infraestrutura no repositorio não necessita dessa validação, como é uma regra de negócio é necessária que seja validada na raiz do documento. 
+
+
+### Bisu
+
+domain - Coração da aplicação
+infrastructure - como faz as tratativas do coração da aplicação - Persistencia de dados
+application - regra da aplicação - cria banco, conta, chave e depois a aplicação - Regras que vão acessar o dominio a todo o momento
+
+Caso de uso - Passo a passo das ações que serão realizada. 
+  - Ex - regista conta, mas ela só é registrada se tiver uma key. Passo a passo 
