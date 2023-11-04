@@ -8,7 +8,7 @@ import (
 	"runtime"
 
 	"github.com/felipematthew/codepix/domain/model"
-
+	
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
@@ -45,6 +45,7 @@ func ConnectDB(env string) *gorm.DB {
 	}
 
 	if os.Getenv("AutoMigrateDb") == "true" {
+		// Vai criar as tabelas na hora que o banco de dados rodar
 		db.AutoMigrate(&model.Bank{}, &model.Account{}, &model.PixKey{}, &model.Transaction{})
 	}
 
