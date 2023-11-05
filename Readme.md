@@ -193,3 +193,11 @@ application - regra da aplicação - cria banco, conta, chave e depois a aplica�
 
 Caso de uso - Passo a passo das ações que serão realizada. 
   - Ex - regista conta, mas ela só é registrada se tiver uma key. Passo a passo 
+
+
+### GRPC -
+
+ Vai ser responsável para coletar os dados atuais e vai colocar da parte interna da aplicação para parte externa para quando tenha uma api request ele já esteja configurado corretamente
+
+ COMANDO PARA EXECUTAR NO TERMINAL 
+ - 
