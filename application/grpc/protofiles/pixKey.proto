@@ -4,8 +4,7 @@ syntax = "proto3";
 package github.com.felipematthew.codepix;
 
 // vai pegar os arquivos do protofiles e vai enviar como pb = PROTOCOL BUFFERS - caracteristicas do protocol
-option go_package = "protofiles;pb";
-
+option go_package = "github.com/felipematthew/codepix/protofiles;pb";
 // Vai criar mensagens
 message PixKeyRegistration {
   string kind = 1;
